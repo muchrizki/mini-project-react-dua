@@ -1,0 +1,97 @@
+.footer {
+    /* background-color: aqua; */
+    padding: 10px;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 30px 0px;
+
+    width: 100%;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    box-shadow: 5px 5px 50px rgba(0, 0, 0, .1);
+}
+
+.footer .company-name h3 {
+    letter-spacing: 2px;
+    color: #53599A;
+    margin-bottom: 5px;
+}
+
+.footer .company-name a {
+    text-decoration: none;
+    letter-spacing: 2px;
+    color: #53599A;
+}
+
+.footer .company-name a:hover {
+    text-decoration: underline;
+}
+
+.footer .nav-menu {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    gap: 20px;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+.footer .nav-menu a {
+    color: black;
+    text-decoration: none;
+}
+
+.footer .nav-menu a.active {
+    color: #53599A;
+}
+
+.footer .nav-menu a:hover {
+    color: #53599A;
+}
+
+.footer .socmed {
+    display: flex;
+    gap: 20px;
+    cursor: pointer;
+}
+
+.footer .socmed img:hover {
+    transform: translateY(-10px);
+    transition: .5s;
+}
+
+@media (max-width: 820px) {
+    .footer {
+        display: grid;
+       grid-template-columns: auto auto;
+       row-gap: 20px;
+    }
+}
+
+@media (max-width: 640px) {
+    .footer {
+       display: flex;
+       flex-wrap: wrap;
+       flex-direction: column;
+
+       width: 110%;
+    }
+
+}
+
+@media (max-width: 440px) {
+    .footer {
+       display: flex;
+       flex-wrap: wrap;
+       flex-direction: column;
+       /* width: 160%; */
+       
+       align-items: start;
+       width: 110%;
+       padding-left: 50px;
+    }
+
+}

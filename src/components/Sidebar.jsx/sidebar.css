@@ -1,0 +1,53 @@
+.sidebar {
+    background-color: white;
+    z-index: 10;
+
+    position: fixed;
+    top: 85px;
+    right: 0;
+
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 10px;
+    height: 100vh;
+    width: 35vw;
+
+    box-shadow: 5px 5px 50px rgba(0, 0, 0, .1);
+}
+
+.sidebar ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+
+    margin-bottom: 20px;
+}
+
+.sidebar ul a {
+    color: black;
+    text-decoration: none;
+}
+
+.sidebar ul a.active {
+    color: #53599A;
+}
+
+.sidebar .button {
+    display: flex;
+    gap: 20px;
+}
+
+
+@media (max-width: 640px) {
+    .sidebar {
+        width: 70vw;
+    }
+}

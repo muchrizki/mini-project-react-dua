@@ -1,0 +1,95 @@
+.contact-section {
+    /* background-color: aqua; */
+    max-width: 1280px;
+    
+    margin: 100px auto;
+    margin-top: 120px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 20px;
+}
+
+.contact-section .get-in-touch {
+    /* background-color: cyan; */
+    width: 400px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-section .get-in-touch h3 {
+    font-size: 2rem;
+    letter-spacing: 2px;
+    line-height: 35px;
+    color: #53599A;
+}
+
+.contact-section .get-in-touch p {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    line-height: 27px;
+}
+
+.contact-section .get-in-touch .join-a-team {
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: #53599A;
+}
+
+.contact-section .get-in-touch .join-a-team:hover {
+    text-decoration: underline;
+}
+
+
+.contact-section .social-media {
+    /* background-color: blueviolet; */
+    /* border: 1px solid grey; */
+    width: 400px;
+    max-width: 450px;
+
+    display: flex;
+    justify-content: center;
+}
+
+
+@media (max-width: 853px) {
+
+    .contact-section .get-in-touch {
+        transform: translateX(-00px);
+    }
+}
+
+@media (max-width: 770px) {
+    .contact-section {
+        justify-content: center;
+        gap:100px;
+        flex-direction: column;
+    }
+
+    .contact-section .get-in-touch {
+        transform: translateX(20px);
+    }
+}
+
+@media (max-width: 440px) {
+    .contact-section .get-in-touch {
+        transform: translateX(30px);
+    }
+}
+
+@media (max-width: 410px) {
+    .contact-section .get-in-touch {
+        transform: translateX(40px);
+    }
+}
+
+@media (max-width: 360px) {
+    .contact-section .get-in-touch {
+        transform: translateX(0px);
+        max-width: 300px;
+    }
+}
