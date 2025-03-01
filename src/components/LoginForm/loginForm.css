@@ -58,6 +58,17 @@
     letter-spacing: 1.5px;
     font-size: 1.1rem;
     border: 1px solid purple;
+    margin-bottom: 20px;
+}
+
+.container-login form .error {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    color: rgb(198, 73, 24);
+    font-style: italic;
+    /* background-color: #53599A; */
+    margin-left: 20px;
+    transform: translateX(10px);
 }
 
 .container-login form button.login {
@@ -122,6 +133,9 @@
     transform: translateY(-10px);
     transition: .5s;
 }
+
+
+
 
 @media (min-width: 768px) {
     .container-login form {
