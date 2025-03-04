@@ -23,7 +23,9 @@ function App() {
       <Routes>
 
         <Route path='/' element={ <Home handleRegisterPage = {handleRegisterPage} setRegisterFalse = {setRegisterFalse} setRegisterTrue = {setRegisterTrue} /> } />
+
         <Route path='/login' element={ <LoginPage register={register} handleRegisterPage = {handleRegisterPage}/> } />
+        
         <Route path='/register' element={ <Register/> } />
       
       </Routes>

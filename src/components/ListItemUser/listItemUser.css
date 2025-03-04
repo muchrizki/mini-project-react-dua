@@ -1,0 +1,107 @@
+.home-page .container-list .list-user .list-item-user {
+    background-color: white;
+    padding: 10px 10px;
+    max-width: 372px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    box-shadow: 5px 5px 35px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+
+    cursor: pointer;
+}
+
+.home-page .container-list .list-user .list-item-user:hover {
+    transform: translateY(5px);
+    transition: .5s;
+}
+
+.home-page .container-list .list-user .list-item-user .img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    overflow: hidden;
+    /* background-color: #53599A; */
+
+}
+
+
+.home-page .container-list .list-user .list-item-user .text {
+    font-family: "EB Garamond";
+    max-width: 170px;
+}
+
+.home-page .container-list .list-user .list-item-user .text h4 {
+    font-size: 1rem;
+    letter-spacing: 2px;
+}
+
+.home-page .container-list .list-user .list-item-user .text p {
+    letter-spacing: 2px;
+    color: #53599A;
+    font-size: .9rem;
+}
+
+@media (min-width: 540px) {
+    .home-page .container-list .list-user .list-item-user {
+        max-width: 450px;
+        gap: 50px;
+    }
+}
+
+@media (min-width: 768px) {
+    .home-page .container-list .list-user {
+        display: grid;
+        grid-template-columns: auto auto;
+        /* border: 1px solid purple; */
+        width: 100%;
+    }
+
+    .home-page .container-list .list-user .list-item-user {
+        max-width: 372px;
+        gap: 20px;
+        justify-content: center;
+        display: flex;
+    }
+}
+
+@media (min-width: 1024px) {
+    
+    .home-page {
+        /* background-color: #53599A; */
+        padding: 0px 100px;
+    }
+
+    .home-page .container-list .list-user {
+        display: flex;
+        flex-direction: row;
+
+        flex-wrap: wrap;
+        width: 1024px;
+        gap: 15px;
+    }
+
+    .home-page .container-list .list-user .list-item-user {
+        width: 400px;
+    }
+}
+
+@media (min-width: 1280px) {
+
+    .home-page {
+        /* background-color: #53599A; */
+        padding: 0px 15px;
+    }
+
+    .home-page .container-list .list-user {
+        display: grid;
+        grid-template-columns: auto auto auto;
+
+        flex-wrap: wrap;
+        width: 1024px;
+        gap: 35px;
+    }
+}
