@@ -2,12 +2,14 @@ import { useState } from "react"
 import useLogin from "../../hooks/useLogin"
 import "./loginForm.css"
 import { useNavigate } from "react-router-dom"
+import Loading from "../Loading"
+import { Alert } from "antd"
 
 
 
 export default function LoginForm ({google, facebook, handleRegisterPage}) {
 
-    const {login, user, loading, error} = useLogin()
+    const {login, user, loading, error, isError} = useLogin()
 
     const navigate = useNavigate()
 
@@ -16,6 +18,7 @@ export default function LoginForm ({google, facebook, handleRegisterPage}) {
 
     // console.log(user)
     // console.log(error)
+    // console.log(isError)
     // console.log(loading)
     
     const cekUser = () => {
@@ -26,7 +29,7 @@ export default function LoginForm ({google, facebook, handleRegisterPage}) {
             if(isUser) {
                 navigate('/')
             }
-        }, 2500)
+        }, 5000)
     }
 
     cekUser()
@@ -48,13 +51,18 @@ export default function LoginForm ({google, facebook, handleRegisterPage}) {
 
             <div className="password" style={{ display: 'flex', flexDirection: 'column' }}>
                 <label htmlFor="" id="password">Password</label>
-                <input type="password" width={100} placeholder="your password here" required value={password} onChange={(e) => setPassword(e.target.value)}/>
+                <input type="password" width={100} placeholder="your password here" value={password} onChange={(e) => setPassword(e.target.value)}/>
             </div>
 
             
-            {error !== null ? <small className="error">{error}</small> : <></>}
+            {/* {error && <small className="error">{error}</small>} */}
+            {/* {!isError && isError !== null &&  <Alert message={"Login Success!"} type="success" showIcon /> }
+            {isError && <Alert message={error} type="error" showIcon /> } */}
 
-            <button type="submit" className="login">Login</button>
+            {error && <Alert message = {error} type = {isError ? "error" : "success" } showIcon />}
+            
+
+            <button type="submit" disabled={loading} className="login">{loading ? <Loading />  : "Login"   }</button>
 
             <a className="toregister" onClick={handleRegisterPage}>{"Don't"} have an account?</a>
 
