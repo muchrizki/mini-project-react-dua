@@ -1,0 +1,19 @@
+.home-page .header button.logout {
+    border: none;
+    background-color: none;
+
+    padding: 10px 20px;
+    color: #53599A;
+
+    border-radius: 20px;
+    letter-spacing: .5px;
+    font-size: .9rem;
+
+    cursor: pointer;
+}
+
+.home-page .header button.logout:hover {
+    box-shadow: 5px 5px 35px rgba(0, 0, 0, 0.2);
+    /* color: rgb(247, 75, 52); */
+    border: 1px solid #53599A;
+}
