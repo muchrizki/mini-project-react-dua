@@ -34,6 +34,7 @@ export default function LandingPage ({setRegisterFalse, setRegisterTrue}) {
         Aos.init()
     }, [])
 
+    
 
     return (
         <>

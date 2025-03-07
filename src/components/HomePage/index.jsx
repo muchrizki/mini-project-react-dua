@@ -7,6 +7,7 @@ import useFetchUserData from "../../hooks/useFetchUserData"
 import { useEffect, useState } from "react"
 import { Pagination } from 'antd'
 import Loading from "../Loading"
+import LogoutButton from "../LogoutButton"
 
 
 export default function HomePage () {
@@ -15,15 +16,17 @@ export default function HomePage () {
     const [currentPage, setCurrentPage] = useState(1)
     // console.log(currentPage)
     const [logout, setLogout] = useState(false)
-    
-    const navigate = useNavigate()
-    // console.log(users)
 
     const handleLogout = () => {
         localStorage.removeItem('user')
         setLogout(true)
         setTimeout(() => navigate('/login'), 3000 )
     }
+    
+    const navigate = useNavigate()
+    // console.log(users)
+
+    
 
     const pageOnChange = (page) => {
         setCurrentPage(page)
@@ -38,7 +41,7 @@ export default function HomePage () {
 
             <div className="header">
                 <h3>Grow Together</h3>
-                {logout ? <Loading /> : <button onClick={handleLogout} className="logout">Logout</button> }
+                {logout ? <Loading /> : <LogoutButton handleLogout={handleLogout}/> }
                 
             </div>
             

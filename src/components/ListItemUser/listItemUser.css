@@ -32,17 +32,29 @@
 .home-page .container-list .list-user .list-item-user .text {
     font-family: "EB Garamond";
     max-width: 170px;
+    position: relative;
 }
 
 .home-page .container-list .list-user .list-item-user .text h4 {
     font-size: 1rem;
     letter-spacing: 2px;
+    
 }
 
 .home-page .container-list .list-user .list-item-user .text p {
     letter-spacing: 2px;
     color: #53599A;
     font-size: .9rem;
+}
+
+.home-page .container-list .list-user .list-item-user .text a.detail-button {
+    text-decoration: none;
+    transform: translateY(20px);
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    
+    position: absolute;
+    bottom: -5px;
 }
 
 @media (min-width: 540px) {

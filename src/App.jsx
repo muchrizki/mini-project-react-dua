@@ -6,6 +6,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import LoginPage from './pages/LoginPage'
 import Register from './pages/Register'
 import Home from './pages/Home'
+import UserDetails from './components/User/UserDetails'
 
 
 
@@ -27,6 +28,8 @@ function App() {
         <Route path='/login' element={ <LoginPage register={register} handleRegisterPage = {handleRegisterPage}/> } />
         
         <Route path='/register' element={ <Register/> } />
+
+        <Route path='/user/:id' element={ <UserDetails /> } />
       
       </Routes>
 
