@@ -9,14 +9,14 @@ export default function UserDetails () {
     const { fetchSingleUser, userData } = useFetchSingleUser()
 
     const navigate = useNavigate()
-    const isLogin = localStorage.getItem('user')
+    // const isLogin = localStorage.getItem('user')
 
     const {id} = useParams()
     // console.log(id)
     // console.log(userData)
 
     useEffect(() => {
-        if (isLogin == null) navigate('/')
+        // if (isLogin == null) navigate('/')
         fetchSingleUser(id)
     }, [])
     
