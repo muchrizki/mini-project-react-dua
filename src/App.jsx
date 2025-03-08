@@ -7,6 +7,7 @@ import LoginPage from './pages/LoginPage'
 import Register from './pages/Register'
 import Home from './pages/Home'
 import UserDetails from './components/User/UserDetails'
+import ProtectedRoute from './routes/ProtectedRoute.jsx'
 
 
 
@@ -29,7 +30,13 @@ function App() {
         
         <Route path='/register' element={ <Register/> } />
 
-        <Route path='/user/:id' element={ <UserDetails /> } />
+        <Route path='/user/:id' element={ 
+          
+          <ProtectedRoute>
+            <UserDetails /> 
+          </ProtectedRoute>
+        
+        }/>
       
       </Routes>
 
