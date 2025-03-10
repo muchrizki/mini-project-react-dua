@@ -29,7 +29,7 @@ export default function Footer (props) {
 
             <div className="company-name">
                 <h3>Grow Together Team</h3>
-                <a href="">muchrizkimubarok@gmail.com</a>
+                <a href="https://mailto:muchrizkimubarok@gmail.com" target="_blank">muchrizkimubarok@gmail.com</a>
             </div>
 
             <div className="nav-menu">

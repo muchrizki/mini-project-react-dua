@@ -12,8 +12,10 @@ import LogoutButton from "../LogoutButton"
 
 export default function HomePage () {
     const {users, loading, totalPage, fetchUsers} = useFetchUserData()
+    const [searchKey, setSearchKey] = useState('')
+    const [searchUser, setSearchUser] = useState([])
 
-    const [currentPage, setCurrentPage] = useState(1)
+    const [currentPage, setCurrentPage] = useState(0)
     // console.log(currentPage)
     const [logout, setLogout] = useState(false)
 
@@ -25,17 +27,30 @@ export default function HomePage () {
     
     const navigate = useNavigate()
     // console.log(users)
+    const handleSearch = () => {    
+    //   const users = newUsers  
+      
+     if ( searchKey !== '') setSearchUser(users.filter(user => user.email.includes(searchKey)))
+     else setSearchUser([])
 
+    }
     
 
     const pageOnChange = (page) => {
-        setCurrentPage(page)
         // console.log(page)
-        fetchUsers(page)
+        setCurrentPage(page)
+        // fetchUsers(page)
     }
 
-    useEffect(() => fetchUsers(currentPage), [])
+    useEffect(() => { fetchUsers(currentPage) }, [])
+    useEffect(() => { 
+        fetchUsers(currentPage)
+        handleSearch()
+    }, [currentPage, searchKey])
 
+
+
+    // console.log(currentPage)
     return(
         <div className="home-page">
 
@@ -49,18 +64,22 @@ export default function HomePage () {
             <div className="container-list">
                 {/* <Searchbar /> */}
                 <div className="search">
-                    <input type="text" placeholder="search..." />
-                    <img src={searchIcon} alt="search-icon" style={{ width: '32px' }} />
+                    <input type="text" placeholder="search..." onChange={(e) => setSearchKey(e.target.value)} />
+                    <img src={searchIcon} alt="search-icon" style={{ width: '32px' }} onClick={handleSearch}/>
                 </div>
 
                 <div className="list-user">
 
-                    {users.map(user => <ListItemUser key={user.id} user = {user} />)}
+                    {
+                        searchUser.length ? searchUser.map(user => <ListItemUser key={user.id} user = {user} />)
+                        : users.map(user => <ListItemUser key={user.id} user = {user} />)
+                        
+                    }
 
                 </div>
             </div>
 
-            <Pagination defaultCurrent={currentPage} total={totalPage*10} onChange={pageOnChange} />
+            <Pagination disabled={searchKey} defaultCurrent={currentPage} total={totalPage*10} onChange={pageOnChange} />
             
         </div>
         
