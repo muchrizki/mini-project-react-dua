@@ -5,6 +5,25 @@ export default function Footer (props) {
 
     const {menuNav, socmedIcon, section, handleNav} = props
 
+    // console.log(socmedIcon)
+    const linkURL = [
+        "https://github.com/muchrizki",
+        "https://wa.me/62895324867789/",
+        "https://www.instagram.com/rzk_mbrk07/",
+        "https://www.linkedin.com/in/much-rizki-mubarok/"
+    ]
+
+    const result = socmedIcon.map((key, index) => {
+        return {
+            sourceImage : key,
+            link : linkURL[index]
+        }
+    })
+
+    // console.log(result)
+
+
+
     return (
         <div className="footer">
 
@@ -19,7 +38,7 @@ export default function Footer (props) {
             </div>
 
             <div className="socmed">
-                {socmedIcon.map(img => <img key={img} src={img} style={{ width: '32px' }} />)}
+                {result.map(img => <a key={img.link} href={img.link} target="_blank"> <img src={img.sourceImage} style={{ width: '32px' }} /> </a> )}
             </div>
 
         </div>

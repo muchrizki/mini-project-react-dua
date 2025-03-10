@@ -13,7 +13,7 @@ export default function AboutSection ( {image}) {
             <div className="about-text" >
                 <h3>About Our Teams</h3>
                 <p>{"Let's"} be a Bigger Team with Clear Communication, Shared Responsibility, Collaboration and Trust.</p>
-                <Link className="link-see-all-team">See all teams</Link>
+                <Link to={'/login'} className="link-see-all-team">See all teams</Link>
             </div>
         </div>
     )
