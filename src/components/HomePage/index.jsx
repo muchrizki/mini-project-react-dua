@@ -8,6 +8,7 @@ import { useEffect, useState } from "react"
 import { Pagination } from 'antd'
 import Loading from "../Loading"
 import LogoutButton from "../LogoutButton"
+// import { Breadcrumb } from 'antd'
 
 
 export default function HomePage () {
@@ -73,10 +74,11 @@ export default function HomePage () {
                     {
                         searchUser.length ? searchUser.map(user => <ListItemUser key={user.id} user = {user} />)
                         : users.map(user => <ListItemUser key={user.id} user = {user} />)
-                        
                     }
 
                 </div>
+
+                
             </div>
 
             <Pagination disabled={searchKey} defaultCurrent={currentPage} total={totalPage*10} onChange={pageOnChange} />
