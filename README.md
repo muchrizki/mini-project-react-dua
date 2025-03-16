@@ -8,7 +8,7 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 What kind library use in this app :
-1. Ant Design, this library used for some UI in this app such as pagination.
+1. Ant Design, this library used for some UI in this app such as pagination and alert.
 2. React Router, in this app router used for handling route path such as home or users and user details.
    As well as for protected route when users have been login or not.
 3. Axios, this library used for getting a data from API reqres.
